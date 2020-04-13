@@ -1,20 +1,29 @@
-import ChatRoom from './games/chatroom/ChatRoom.js';
+import ChatRoom from "./games/chatroom/ChatRoom.js";
 import CookieClicker from "./games/cookieClicker/CookieClicker.js";
 import GoogleGossip from "./games/googlegossip/GoogleGossip.js";
-import Mafia from './games/mafia/Mafia.js';
-import Multiplication from './games/multiplication/Multiplication.js';
-import Pokemon from './games/pokemon/Pokemon.js'
-import Pong from './games/pong/Pong.js';
-import RockPaperScissors from './games/rps/RockPaperScissors.js';
-import Spark from './games/spark/Spark.js';
-import TicTacToe from './games/tictactoe/TicTacToe.js';
+import Mafia from "./games/mafia/Mafia.js";
+import Multiplication from "./games/multiplication/Multiplication.js";
+import Pokemon from "./games/pokemon/Pokemon.js";
+import Pong from "./games/pong/Pong.js";
+import RockPaperScissors from "./games/rps/RockPaperScissors.js";
+import Spark from "./games/spark/Spark.js";
+import StrengthTester from "./games/StrengthTester/StrengthTester.js";
+import TicTacToe from "./games/tictactoe/TicTacToe.js";
 import TugOfWar from "./games/TugOfWar/TugOfWar.js";
-import TwentyOneQuestions from './games/twentyOneQuestions/TwentyOneQuestions.js';
+import TwentyOneQuestions from "./games/twentyOneQuestions/TwentyOneQuestions.js";
 import burst_Forth from "./games/Burst_Forth/burstForth.js";
 import fight from "./games/fight/fight.js";
-import uno from './games/uno/uno.js';
+import uno from "./games/uno/uno.js";
 
 const gameData = {
+  strengthtester: {
+    title: "StrengthTester",
+    authors: "Olivia, Keanneyi, Wendy",
+    description: "Two player tug of war game",
+    minUsers: 2,
+    maxUsers: 2,
+    component: StrengthTester
+  },
 
   chatroom: {
     title: "Chat Room",
@@ -22,7 +31,7 @@ const gameData = {
     description: "A place to chat with a group of friends",
     minUsers: 1,
     maxUsers: 10,
-    component: ChatRoom,
+    component: ChatRoom
   },
 
   tictactoe: {
@@ -31,7 +40,7 @@ const gameData = {
     description: "The classic two-player game with Xs and Os",
     minUsers: 2,
     maxUsers: 2,
-    component: TicTacToe,
+    component: TicTacToe
   },
 
   rockpaperscissors: {
@@ -40,7 +49,7 @@ const gameData = {
     description: "Class 2-player rock paper scissors",
     minUsers: 2,
     maxUsers: 2,
-    component: RockPaperScissors,
+    component: RockPaperScissors
   },
 
   multiplication: {
@@ -49,7 +58,7 @@ const gameData = {
     description: "A multiplication speed game",
     minUsers: 2,
     maxUsers: 2,
-    component: Multiplication,
+    component: Multiplication
   },
 
   pong: {
@@ -58,16 +67,16 @@ const gameData = {
     description: "Classic Pong",
     minUsers: 1,
     maxUsers: 2,
-    component: Pong,
+    component: Pong
   },
 
   pokemon: {
-      title: "Pokemon Simulator",
-      authors: "Imani Greenidge and Raishan Bernard",
-      description: "Turn Based Pokemon Battle",
-      minUsers: 1,
-      maxUsers: 2,
-      component: Pokemon,
+    title: "Pokemon Simulator",
+    authors: "Imani Greenidge and Raishan Bernard",
+    description: "Turn Based Pokemon Battle",
+    minUsers: 1,
+    maxUsers: 2,
+    component: Pokemon
   },
 
   questions: {
@@ -76,7 +85,7 @@ const gameData = {
     description: "21 questions between 2 players",
     minUsers: 1,
     maxUsers: 2,
-    component: TwentyOneQuestions,
+    component: TwentyOneQuestions
   },
 
   photosharing: {
@@ -85,7 +94,7 @@ const gameData = {
     description: "Ripping off Twitter, Instagram, AND Tumblr.",
     minUsers: 2,
     maxUserss: 5,
-    component: Spark,
+    component: Spark
   },
 
   uno: {
@@ -94,16 +103,17 @@ const gameData = {
     description: "The classic UNO game",
     minUsers: 2,
     maxUsers: 2,
-    component: uno,
+    component: uno
   },
 
   mafia: {
     title: "Mafia",
     authors: "Caelan Springer, Daniel Lin, Daniel Zamilatskiy",
-    description: "Your greatest friends can be your greatest enemy. Trust no one but yourself.",
+    description:
+      "Your greatest friends can be your greatest enemy. Trust no one but yourself.",
     minUsers: 1,
     maxUsers: 20,
-    component: Mafia,
+    component: Mafia
   },
 
   cookieClicker: {
@@ -150,8 +160,7 @@ const gameData = {
     minUsers: 1,
     maxUsers: 10,
     component: GoogleGossip
-  },
-
+  }
 };
 
 export default gameData;
