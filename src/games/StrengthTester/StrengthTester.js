@@ -7,8 +7,33 @@ export default class StrengthTester extends GameComponent {
   constructor(props) {
     super(props);
     this.state = {
-      points: 0
+      rope: 0
     };
+    this.getSessionDatabaseRef().set({ rope: 0 });
+  }
+  // componentDidMount() {
+  //   let that = this;
+  //   document.body.onkeyup = e => {
+  //     if (e.keyCode === 32) {
+  //       console.log("space bar pressed");
+  //       let newRope = that.state.rope + 1;
+  //       that.getSessionDatabaseRef().update({ rope: newRope });
+  //     }
+  //   };
+  // }
+
+  onSessionDataChanged(data) {
+    console.log("Data changed");
+    this.setState({ rope: data.rope });
+  }
+
+  handleButtonClick(isHost) {
+    console.log("Button clicked");
+    if (isHost) {
+      this.getSessionDatabaseRef().set({ rope: this.state.rope - 1 });
+    } else {
+      this.getSessionDatabaseRef().set({ rope: this.state.rope + 1 });
+    }
   }
 
   render() {
@@ -20,14 +45,13 @@ export default class StrengthTester extends GameComponent {
     var creator = UserApi.getName(this.getSessionCreatorUserId());
     return (
       <div>
-        <p>Session ID: {id}</p>
-        <p>Session creator: {creator}</p>
-        <p>Session users:</p>
-        <p>{users[0]}</p>
-        <p>{users[1]}</p>
-        The user is <b>{isHost ? "host" : "guest"}</b>.
-        <Player name={users[0]} points={this.state.points} />
-        <Player name={users[1]} points={this.state.points} />
+        <p>{this.state.rope}</p>
+        <p>{id}</p>
+        <button onClick={() => this.handleButtonClick(isHost)}>
+          Pulling the rope.
+        </button>
+        <Player name={users[0]} points={this.state.rope} />
+        <Player name={users[1]} points={this.state.rope} />
         <Rope />
       </div>
     );
