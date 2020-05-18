@@ -1,0 +1,19 @@
+#strengthtester {
+  background-image: url("/games/StrengthTester/rope.png");
+}
+
+#knot {
+  width: 20%;
+}
+
+#knot-container {
+  display: flex;
+  justify-content: center;
+}
+
+#left {
+  width: 100%;
+}
+#right {
+  width: 100%;
+}
